@@ -30,10 +30,10 @@ native class Readable extends EventEmitter {
 	function setEncoding(encoding : string) : void;
 	function resume() : void;
 	function pause() : void;
-	function pipe(destination : Writable) : void;
-	function pipe(destination : Writable, options : Map.<variant>) : void;
+	function pipe(destination : variant) : void;
+	function pipe(destination : variant, options : Map.<variant>) : void;
 	function unpipe() : void;
-	function unpipe(destination : Writable) : void;
+	function unpipe(destination : variant) : void;
 	function unshift(chunk : variant) : void;
 	function wrap(stream : Readable) : void;
 	function _read(size : number) : void;

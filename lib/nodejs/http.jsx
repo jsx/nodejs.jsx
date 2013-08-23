@@ -49,7 +49,7 @@ native __fake__ class ServerRequest extends EventEmitter {
 	function setEncoding(encoding : string) : void;
 }
 
-native __fake__ class ServerResponse {
+native __fake__ class ServerResponse extends EventEmitter {
 	function writeHead(status : int, headers : Map.<string>) : void;
 	function writeHead(status : int, responsePhrase : string, headers : Map.<string>) : void;
 	function write(content : string, encoding : string) : boolean;

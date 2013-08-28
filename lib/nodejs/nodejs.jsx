@@ -23,12 +23,13 @@
 import "js.jsx";
 import "tty.jsx";
 
-final class node {
-	static const __dirname     = js.eval("__dirname") as string;
-	static const __filename    = js.eval("__filename") as string;
+native __fake__ class node {
+	static const __dirname : string;
+	static const __filename : string;
+	static function require(name : string) : variant;
 
 	delete function constructor() {}
-}
+} = "{ __dirname: __dirname, __filename: __filename, require: require }";
 
 native class module {
 	static __readonly__ var id : string;

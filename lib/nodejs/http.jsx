@@ -52,6 +52,7 @@ native __fake__ class ServerRequest extends EventEmitter {
 native __fake__ class ServerResponse extends EventEmitter {
 	function writeHead(status : int, headers : Map.<string>) : void;
 	function writeHead(status : int, responsePhrase : string, headers : Map.<string>) : void;
+	function write(content : string) : boolean;
 	function write(content : string, encoding : string) : boolean;
 	function write(content : Buffer) : boolean;
 	function end() : boolean;

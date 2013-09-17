@@ -40,13 +40,13 @@ native __fake__ class HTTPServer {
 }
 
 native __fake__ class ServerRequest extends EventEmitter {
-	__readonly__ var method          : string;
-	__readonly__ var url             : string;
-	__readonly__ var headers         : Map.<string>;
-	__readonly__ var trailers        : Map.<string>;
-	__readonly__ var httpVersin      : string;
-	__readonly__ var httpVersinMajor : int;
-	__readonly__ var httpVersinMinor : int;
+	__readonly__ var method           : string;
+	__readonly__ var url              : string;
+	__readonly__ var headers          : Map.<string>;
+	__readonly__ var trailers         : Map.<string>;
+	__readonly__ var httpVersion      : string;
+	__readonly__ var httpVersionMajor : int;
+	__readonly__ var httpVersionMinor : int;
 
 	function setEncoding(encoding : string) : void;
 }
@@ -75,12 +75,12 @@ native class ClientRequest extends EventEmitter {
 }
 
 native __fake__ class ClientResponse extends EventEmitter {
-	__readonly__ var statusCode      : int;
-	__readonly__ var headers         : Map.<string>;
-	__readonly__ var trailers        : Map.<string>;
-	__readonly__ var httpVersin      : string;
-	__readonly__ var httpVersinMajor : int;
-	__readonly__ var httpVersinMinor : int;
+	__readonly__ var statusCode       : int;
+	__readonly__ var headers          : Map.<string>;
+	__readonly__ var trailers         : Map.<string>;
+	__readonly__ var httpVersion      : string;
+	__readonly__ var httpVersionMajor : int;
+	__readonly__ var httpVersionMinor : int;
 }
 
 native __fake__ class _https {

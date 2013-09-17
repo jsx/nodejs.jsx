@@ -22,6 +22,7 @@
 
 import "nodejs.jsx";
 import "events.jsx";
+import "stream.jsx";
 
 native class http {
 	static function createServer(
@@ -39,7 +40,7 @@ native __fake__ class HTTPServer {
 	function close() : void;
 }
 
-native __fake__ class ServerRequest extends EventEmitter {
+native __fake__ class ServerRequest extends Readable {
 	__readonly__ var method           : string;
 	__readonly__ var url              : string;
 	__readonly__ var headers          : Map.<string>;
@@ -47,8 +48,6 @@ native __fake__ class ServerRequest extends EventEmitter {
 	__readonly__ var httpVersion      : string;
 	__readonly__ var httpVersionMajor : int;
 	__readonly__ var httpVersionMinor : int;
-
-	function setEncoding(encoding : string) : void;
 }
 
 native __fake__ class ServerResponse extends EventEmitter {
@@ -74,7 +73,7 @@ native class ClientRequest extends EventEmitter {
 	function _write(chunk : variant, encoding : string, callback : (Error) -> void) : boolean;
 }
 
-native __fake__ class ClientResponse extends EventEmitter {
+native __fake__ class ClientResponse extends Readable {
 	__readonly__ var statusCode       : int;
 	__readonly__ var headers          : Map.<string>;
 	__readonly__ var trailers         : Map.<string>;

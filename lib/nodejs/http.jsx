@@ -24,11 +24,13 @@ import "nodejs.jsx";
 import "events.jsx";
 
 native class http {
-	function createServer(
+	static function createServer(
 		requestListener : function(:ServerRequest,:ServerResponse):void
 	) : HTTPServer;
 
-	function get(url : string, callback : function(:ClientResponse):void) : ClientRequest;
+	static function request(url : string, callback : function(:ClientResponse):void) : ClientRequest;
+	static function request(options : Map.<variant>, callback : function(:ClientResponse):void) : ClientRequest;
+	static function get(url : string, callback : function(:ClientResponse):void) : ClientRequest;
 } = "require('http')";
 
 native __fake__ class HTTPServer {
@@ -60,8 +62,18 @@ native __fake__ class ServerResponse extends EventEmitter {
 	function end(data : Buffer) : boolean;
 }
 
-native __fake__ class ClientRequest extends EventEmitter {
+native class ClientRequest extends EventEmitter {
+	// copied from writable
+	function write(chunk : variant) : boolean;
+	function write(chunk : variant, encoding : string) : boolean;
+	function write(chunk : variant, encoding : string, callback : (Error) -> void) : boolean;
+	function end() : void;
+	function end(chunk : variant) : void;
+	function end(chunk : variant, encoding : string) : void;
+	function end(chunk : variant, encoding : string, callback : (Error) -> void) : void;
+	function _write(chunk : variant, encoding : string, callback : (Error) -> void) : boolean;
 }
+
 native __fake__ class ClientResponse extends EventEmitter {
 	__readonly__ var statusCode      : int;
 	__readonly__ var headers         : Map.<string>;

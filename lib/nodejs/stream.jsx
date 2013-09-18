@@ -20,7 +20,7 @@
  * IN THE SOFTWARE.
  */
 
-import "events.jsx";
+import "nodejs/events.jsx";
 
 native class Readable extends EventEmitter {
 	function constructor();

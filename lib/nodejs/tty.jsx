@@ -20,7 +20,7 @@
  * IN THE SOFTWARE.
  */
 
-import "stream.jsx";
+import "nodejs/stream.jsx";
 
 native class ReadStream extends Readable {
 	__readonly__ var fd : int;

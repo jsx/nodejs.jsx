@@ -21,7 +21,7 @@
  */
 
 import "js.jsx";
-import "tty.jsx";
+import "nodejs/tty.jsx";
 
 native __fake__ class node {
 	static const __dirname : string;

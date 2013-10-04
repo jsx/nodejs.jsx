@@ -22,7 +22,7 @@
 
 import "events.jsx";
 
-native class Readline {
+native class readline {
 	class Interface extends EventEmitter
 	{
 		function setPrompt(prompt : string) : void;
@@ -35,5 +35,5 @@ native class Readline {
 		function write(data : string) : void;
 		function write(data : Nullable.<string>, key : variant) : void;
 	}
-	static function createInterface(options : Map.<variant>) : Readline.Interface;
+	static function createInterface(options : Map.<variant>) : readline.Interface;
 } = "require('readline')";

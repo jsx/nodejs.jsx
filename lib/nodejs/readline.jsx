@@ -20,14 +20,20 @@
  * IN THE SOFTWARE.
  */
 
-native class path {
-	static function normalize(p : string) : string;
-	static function join(...path : string) : string;
-	static function resolve(...path : string) : string;
-	static function relative(from : string, to : string) : string;
-	static function dirname(p : string) : string;
-	static function basename(p : string) : string;
-	static function basename(p : string, ext : string) : string;
-	static function extname(p : string) : string;
-	var sep : string;
-} = "require('path')";
+import "events.jsx";
+
+native class readline {
+	class Interface extends EventEmitter
+	{
+		function setPrompt(prompt : string) : void;
+		function setPrompt(prompt : string, length : int) : void;
+		function prompt() : void;
+		function prompt(preserveCursor : boolean) : void;
+		function question(query : string, callback : (string)->void) : void;
+		function pause() : void;
+		function close() : void;
+		function write(data : string) : void;
+		function write(data : Nullable.<string>, key : variant) : void;
+	}
+	static function createInterface(options : Map.<variant>) : readline.Interface;
+} = "require('readline')";

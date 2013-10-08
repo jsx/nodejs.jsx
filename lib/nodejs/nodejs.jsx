@@ -64,6 +64,9 @@ native class process {
 	static function on(event : string, listener : () -> void) : void;
 	static function on(event : string, listener : (variant) -> void) : void;
 
+	static function once(event : string, listener : () -> void) : void;
+	static function once(event : string, listener : (variant) -> void) : void;
+
 	static function chdir(directory : string) : void;
 	static function cwd() : string;
 	static function exit() : void;

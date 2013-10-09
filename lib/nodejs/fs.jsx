@@ -34,6 +34,8 @@ native class fs {
 	static function mkdirSync(path : string) : void;
 	static function mkdirSync(path : string, mode : string) : void;
 
+	static function rmdirSync(path : string) : void;
+
 	static function readdirSync(path : string) : string[];
 
 	static function unlinkSync(path : string) : void;

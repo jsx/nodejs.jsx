@@ -37,6 +37,11 @@ native class http {
 native __fake__ class HTTPServer {
 	function listen(port : int) : void;
 
+  // event : "request", "checkContinue"
+	function on(event : string, callback : function(:ServerRequest, :ServerResponse):void) : void;
+  // event : "close"
+	function on(event : string, callback : function():void) : void;
+
 	function close() : void;
 }
 

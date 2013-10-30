@@ -64,6 +64,7 @@ native __fake__ class ServerResponse extends EventEmitter {
 	function end() : boolean;
 	function end(data : string, encoding : string) : boolean;
 	function end(data : Buffer) : boolean;
+	function removeHeader(name : string) : void;
 }
 
 native class ClientRequest extends EventEmitter {

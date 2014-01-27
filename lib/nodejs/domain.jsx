@@ -20,12 +20,29 @@
  * IN THE SOFTWARE.
  */
 
-native class EventEmitter {
-	function on(event : string, listener : function():void) : void;
-	function on(event : string, listener : function(:variant):void) : void;
-	function on(event : string, listener : function(:variant,:variant):void) : void;
-  function emit(event : string) : void;
-  function emit(event : string, arg0 : variant) : void;
-  function emit(event : string, arg0 : variant, arg1 : variant) : void;
-  function emit(event : string, arg0 : variant, arg1 : variant, arg2 : variant) : void;
-} = "require('events').EventEmitter";
+import "nodejs/events.jsx";
+import "timer.jsx";
+
+native class domain {
+	static function create() : Domain;
+} = "require('domain')";
+
+native class Domain extends EventEmitter {
+	__readonly__ var members : Array.<variant>;
+  function run(callback : ()->void) : void;
+  function add(emitter : EventEmitter) : void;
+  function add(timer : TimerHandle) : void;
+  
+  function remove(emitter : EventEmitter) : void;
+  function remove(timer : TimerHandle) : void;
+
+  function bind(callback : (Error)->void) : (Error)->void;
+  function bind(callback : (Error, variant)->void) : (Error, variant)->void;
+  function bind(callback : (Error, variant, variant)->void) : (Error, variant, variant)->void;
+
+  function intercept(callback : ()->void) : (Error)->void;
+  function intercept(callback : (variant)->void) : (Error, variant)->void;
+  function intercept(callback : (variant, variant)->void) : (Error, variant, variant)->void;
+
+}
+

@@ -37,6 +37,11 @@ native class http {
 native __fake__ class HTTPServer {
 	function listen(port : int) : void;
 
+  // event : "request", "checkContinue"
+	function on(event : string, callback : function(:ServerRequest, :ServerResponse):void) : void;
+  // event : "close"
+	function on(event : string, callback : function():void) : void;
+
 	function close() : void;
 }
 
@@ -59,6 +64,7 @@ native __fake__ class ServerResponse extends EventEmitter {
 	function end() : boolean;
 	function end(data : string, encoding : string) : boolean;
 	function end(data : Buffer) : boolean;
+	function removeHeader(name : string) : void;
 }
 
 native class ClientRequest extends EventEmitter {

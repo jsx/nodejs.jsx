@@ -20,8 +20,8 @@
  * IN THE SOFTWARE.
  */
 
-import "nodejs/nodejs.jsx";
-import "nodejs/events.jsx";
+import "./nodejs.jsx";
+import "./events.jsx";
 
 /**
  * @see http://nodejs.org/api/fs.html

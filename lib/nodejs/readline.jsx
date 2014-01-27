@@ -20,7 +20,7 @@
  * IN THE SOFTWARE.
  */
 
-import "events.jsx";
+import "./events.jsx";
 
 native class readline {
 	class Interface extends EventEmitter

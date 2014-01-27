@@ -29,7 +29,7 @@
   ],
   "directories": {
     "test": "./t",
-    "lib": "./lib"
+    "lib": "./lib/nodejs"
   },
   "engines": {
     "node": ">= 0.8.0"

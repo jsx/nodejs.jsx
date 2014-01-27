@@ -20,9 +20,9 @@
  * IN THE SOFTWARE.
  */
 
-import "nodejs/nodejs.jsx";
-import "nodejs/events.jsx";
-import "nodejs/tty.jsx";
+import "./nodejs.jsx";
+import "./events.jsx";
+import "./tty.jsx";
 
 /*
  * @see http://nodejs.org/api/child_process.html

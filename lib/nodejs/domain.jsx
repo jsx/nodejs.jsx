@@ -20,7 +20,7 @@
  * IN THE SOFTWARE.
  */
 
-import "nodejs/events.jsx";
+import "./events.jsx";
 import "timer.jsx";
 
 native class domain {

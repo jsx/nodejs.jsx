@@ -20,9 +20,9 @@
  * IN THE SOFTWARE.
  */
 
-import "nodejs/nodejs.jsx";
-import "nodejs/events.jsx";
-import "nodejs/stream.jsx";
+import "./nodejs.jsx";
+import "./events.jsx";
+import "./stream.jsx";
 
 native class http {
 	static function createServer(

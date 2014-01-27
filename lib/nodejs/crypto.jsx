@@ -20,7 +20,7 @@
  * IN THE SOFTWARE.
  */
 
-import "nodejs/nodejs.jsx";
+import "./nodejs.jsx";
 
 native __fake__ class crypto {
 

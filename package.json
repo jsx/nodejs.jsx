@@ -1,0 +1,37 @@
+{
+  "name": "nodejs.jsx",
+  "version": "0.1.0",
+  "description": "node.js binding for JSX",
+  "license": "MIT",
+  "keywords": [
+    "jsx",
+    "altjs",
+    "lib"
+  ],
+  "homepage": "http://jsx.github.io/",
+  "repository": "git://github.com/jsx/nodejs.jsx.git",
+  "bugs": {
+    "url": "https://github.com/jsx/nodejs.jsx/issues"
+  },
+  "author": {
+    "name": "Kazuho Oku",
+    "email": "oku.kazuho@dena.jp"
+  },
+  "contributors": [
+    {
+      "name": "Goro Fuji (gfx)",
+      "email": "gfuji@cpan.org"
+    },
+    {
+      "name": "Yuichi Nishiwaki (wasabiz)",
+      "email": "nishiwaki.yuichi@dena.jp"
+    }
+  ],
+  "directories": {
+    "test": "./t",
+    "lib": "./lib"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  }
+}

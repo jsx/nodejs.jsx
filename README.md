@@ -5,8 +5,16 @@ Usage
 -----
 
 ```
+$ cat > package.json
+{
+  "dependencies": {
+    "nodejs.jsx": "~ 0.1.1"
+  }
+}
+^D
+$ npm install
 $ cat > myapp.jsx
-import "nodejs/*.jsx";
+import "nodejs.jsx/*.jsx";
 
 class _Main {
     static main(args : string[]) : void {
@@ -14,7 +22,7 @@ class _Main {
     }
 }
 ^D
-$ jsx --include-path <path-of-nodejs.jsx>/lib myapp.jsx
+$ jsx myapp.jsx
 ```
 
 Notes to Committers

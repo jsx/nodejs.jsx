@@ -1,5 +1,5 @@
 import "test-case.jsx";
-import "nodejs/ext/mysql.jsx";
+import "nodejs.jsx/ext/mysql.jsx";
 
 class _Test extends TestCase {
 

@@ -1,5 +1,5 @@
 import "test-case.jsx";
-import "nodejs/http.jsx";
+import "nodejs.jsx/http.jsx";
 
 class _Test extends TestCase {
 

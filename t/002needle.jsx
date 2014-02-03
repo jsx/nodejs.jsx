@@ -1,5 +1,5 @@
 import "test-case.jsx";
-import "nodejs/ext/needle.jsx";
+import "nodejs.jsx/ext/needle.jsx";
 
 class _Test extends TestCase {
 

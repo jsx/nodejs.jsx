@@ -1,10 +1,10 @@
 import "test-case.jsx";
 import "timer.jsx";
-import "nodejs/domain.jsx";
-import "nodejs/nodejs.jsx";
-import "nodejs/fs.jsx";
-import "nodejs/http.jsx";
-import "nodejs/events.jsx";
+import "nodejs.jsx/domain.jsx";
+import "nodejs.jsx/nodejs.jsx";
+import "nodejs.jsx/fs.jsx";
+import "nodejs.jsx/http.jsx";
+import "nodejs.jsx/events.jsx";
 
 class _TestAsync extends EventEmitter {
   function alwaysError(arg : string) : void {

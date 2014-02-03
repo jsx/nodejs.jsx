@@ -34,7 +34,7 @@
   },
   "directories": {
     "test": "./t",
-    "lib": "./lib/nodejs"
+    "lib": "./lib/nodejs.jsx"
   },
   "engines": {
     "node": ">= 0.8.0"

@@ -1,5 +1,5 @@
 import "test-case.jsx";
-import "nodejs/ext/memcached.jsx";
+import "nodejs.jsx/ext/memcached.jsx";
 
 class _Test extends TestCase {
 

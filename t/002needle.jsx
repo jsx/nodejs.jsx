@@ -5,7 +5,7 @@ class _Test extends TestCase {
 
 	function testGet() : void {
 		this.async((async) -> {
-			needle.get("http://www.yahoo.com/", function (error, response, data) {
+			needle.get("http://www.w3.org/", function (error, response, data) {
 				if (error) {
 					log error;
 				} else {

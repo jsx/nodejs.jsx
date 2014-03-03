@@ -42,8 +42,8 @@ native class child_process {
 	 *   <li>gid : int</li>
 	 * </ul>
 	 */
-	function spawn(command : string, args : string[], options : Map.<variant>) : ChildProcess;
-	function spawn(command : string, args : string[]) : ChildProcess;
+	static function spawn(command : string, args : string[], options : Map.<variant>) : ChildProcess;
+	static function spawn(command : string, args : string[]) : ChildProcess;
 
 	/**
 	 * <p>Runs a command in a shell and bufferes the output.</p>
@@ -59,8 +59,8 @@ native class child_process {
 	 *   <li>killSignal : string (default: "SIGTERM")</li>
 	 * </ul>
 	 */
-	function exec(command : string, options : Map.<variant>, callback : (Error, Buffer, Buffer) -> void) : ChildProcess;
-	function exec(command : string, callback : (Error, Buffer, Buffer) -> void) : ChildProcess;
+	static function exec(command : string, options : Map.<variant>, callback : (Error, Buffer, Buffer) -> void) : ChildProcess;
+	static function exec(command : string, callback : (Error, Buffer, Buffer) -> void) : ChildProcess;
 
 	/**
 	 * <p>Similar to <code>exec()</code> exept it does not execute a subshell
@@ -77,8 +77,8 @@ native class child_process {
 	 *   <li>killSignal : string (default: "SIGTERM")</li>
 	 * </ul>
 	 */
-	function execFile(file : string, args : string[], options : Map.<variant>, callback : (Error, Buffer, Buffer) -> void) : ChildProcess;
-	function execFile(file : string, args : string[], callback : (Error, Buffer, Buffer) -> void) : ChildProcess;
+	static function execFile(file : string, args : string[], options : Map.<variant>, callback : (Error, Buffer, Buffer) -> void) : ChildProcess;
+	static function execFile(file : string, args : string[], callback : (Error, Buffer, Buffer) -> void) : ChildProcess;
 
 	//function fork(modulePath : string, args : string[], options : Map.<variant>) : ChildProcess; // NodeJS specific
 } = "require('child_process')";

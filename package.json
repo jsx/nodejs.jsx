@@ -1,6 +1,6 @@
 {
   "name": "nodejs.jsx",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "node.js binding for JSX",
   "license": "MIT",
   "keywords": [

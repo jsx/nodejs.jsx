@@ -27,38 +27,62 @@ import "./events.jsx";
  * @see http://nodejs.org/api/fs.html
  */
 native class fs {
+	static function stat(path : string, callback : (Error, Stats) -> void) : void;
 	static function statSync(path : string) : Stats;
 
 	static function existsSync(path : string) : boolean;
 
+	static function mkdir(path : string, callback : (Error) -> void) : void;
 	static function mkdirSync(path : string) : void;
+	static function mkdir(path : string, mode : string, callback : (Error) -> void) : void;
 	static function mkdirSync(path : string, mode : string) : void;
 
+	static function rmdir(path : string, callback : (Error) -> void) : void;
 	static function rmdirSync(path : string) : void;
 
+	static function readdir(path : string, callback : (Error, string[]) -> void) : void;
 	static function readdirSync(path : string) : string[];
 
+	static function unlink(path : string, callback : (Error) -> void) : void;
 	static function unlinkSync(path : string) : void;
 
+	static function chmod(path : string, mode : string, callback : (Error) -> void) : void;
 	static function chmodSync(path : string, mode : string) : void;
 
+	static function open(path : string, flags : string, callback : (Error, int) -> void) : void;
 	static function openSync(path : string, flags : string) : int;
+	static function open(path : string, flags : string, mode : int, callback : (Error, int) -> void) : void;
 	static function openSync(path : string, flags : string, mode : int) : int;
+
+	static function close(fd : int, callback : (Error) -> void) : void;
 	static function closeSync(fd : int) : void;
 
+	static function read(fd : int, buffer : Buffer, offset : int, length : int, position : int, callback : (Error, int, Buffer) -> void) : void;
 	static function readSync(fd : int, buffer : Buffer, offset : int, length : int) : int;
 	static function readSync(fd : int, buffer : Buffer, offset : int, length : int, position : int) : int;
+
+	static function readFile(filename : string, callback : (Error, Buffer) -> void) : void;
 	static function readFileSync(filename : string) : Buffer;
+	static function readFile(filename : string, encoding : string, callback : (Error, string) -> void) : void;
 	static function readFileSync(filename : string, encoding : string) : string;
 
+	static function write(fd : int, buffer : Buffer, offset : int, length : int, callback : (Error, int, Buffer) -> void) : void;
 	static function writeSync(fd : int, buffer : Buffer, offset : int, length : int) : int;
+	static function write(fd : int, buffer : Buffer, offset : int, length : int, position : int, callback : (Error, int, Buffer) -> void) : void;
 	static function writeSync(fd : int, buffer : Buffer, offset : int, length : int, position : int) : int;
+
+	static function writeFile(filename : string, data : Buffer, callback : (Error) -> void) : void;
 	static function writeFileSync(filename : string, data : Buffer) : void;
+	static function writeFile(filename : string, data : string, callback : (Error) -> void) : void;
 	static function writeFileSync(filename : string, data : string) : void;
+	static function writeFile(filename : string, data : string, encoding : string, callback : (Error) -> void) : void;
 	static function writeFileSync(filename : string, data : string, encoding : string) : void;
 
+	static function appendFile(filename : string, data : Buffer, callback : (Error) -> void) : void;
 	static function appendFileSync(filename : string, data : Buffer) : void;
+	static function appendFile(filename : string, data : string, callback : (Error) -> void) : void;
 	static function appendFileSync(filename : string, data : string) : void;
+	static function appendFile(filename : string, data : string, encoding : string, callback : (Error) -> void) : void;
 	static function appendFileSync(filename : string, data : string, encoding : string) : void;
 
 	static function watch(filename : string, listener : function(event:string,filename:Nullable.<string>):void) : FSWatcher;

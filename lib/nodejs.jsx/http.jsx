@@ -64,6 +64,11 @@ native __fake__ class ServerResponse extends EventEmitter {
 	function end() : boolean;
 	function end(data : string, encoding : string) : boolean;
 	function end(data : Buffer) : boolean;
+	function setHeader(name : string, value : string) : void;
+	function setHeader(name : string, value : string[]) : void;
+	var headersSent : boolean;
+	var sendDate : boolean;
+	function getHeader(name : string) : Nullable.<string>;
 	function removeHeader(name : string) : void;
 }
 

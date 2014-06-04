@@ -21,6 +21,7 @@
  */
 
 import "./nodejs.jsx";
+import "./stream.jsx";
 
 native __fake__ class crypto {
 
@@ -29,6 +30,8 @@ native __fake__ class crypto {
 	static function getHashes() : string[];
 
 	static function createHash(algorithm : string) : Hash;
+	static function createHmac(algorithm : string, key : string) : Hmac;
+	static function createHmac(algorithm : string, key : Buffer) : Hmac;
 
 	static function randomBytes(size : number) : Buffer;
 	static function randomBytes(size : number, callback : function (ex : variant, buf : Buffer) : void) : void;
@@ -38,8 +41,14 @@ native __fake__ class crypto {
 
 } = "require('crypto')";
 
-/* FIXME should better be a fake interface */
-native __fake__ class Hash {
+native class Hash extends Duplex {
+	function update(data : variant) : void;
+	function update(data : variant, input_encoding : string) : void;
+	function digest() : Buffer;
+	function digest(encoding : string) : variant;
+}
+
+native class Hmac extends Duplex {
 	function update(data : variant) : void;
 	function update(data : variant, input_encoding : string) : void;
 	function digest() : Buffer;
